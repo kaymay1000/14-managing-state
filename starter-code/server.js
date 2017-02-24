@@ -68,8 +68,8 @@ app.get('/articles', (request, response) => {
 });
 
 
-// TODO: This is a new route to find a specific instance of an article record from the DB. Where is it invoked? What does it do?
-// Put your response in this comment...
+// DONE: This is a new route to find a specific instance of an article record from the DB. Where is it invoked? What does it do?
+// This function is invoked in article.js (Article.findWhere), and it finds a specific instance of an article record from the DB.
 app.get('/articles/find', (request, response) => {
   let client = new pg.Client(conString);
   let sql = `SELECT * FROM articles
@@ -92,8 +92,8 @@ app.get('/articles/find', (request, response) => {
 })
 
 
-// TODO: Where is this route invoked? What does it do?
-// Put your response in this comment...
+// DONE: Where is this route invoked? What does it do?
+// This function is invoked in article.js (Article.allCategories). It gathers all possible article categories.
 app.get('/categories', (request, response) => {
   let client = new pg.Client(conString);
 
@@ -197,8 +197,8 @@ app.delete('/articles/:id', (request, response) => {
   response.send('Delete complete');
 });
 
-// TODO: Where is this invoked? What does it do?
-// Put your response in this comment...
+// DONE: Where is this invoked? What does it do?
+// This function is invoked in article.js (Article.truncateTable), as a way to empty out all articles from a table in the database.
 app.delete('/articles', (request, response) => {
   client.query(
     'DELETE FROM articles;'
