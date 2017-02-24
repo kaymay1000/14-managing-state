@@ -11,6 +11,6 @@ page('/author', '/');
 page('/author/:authorName', articleController.loadByAuthor, articleController.index);
 page('/category/:categoryName', articleController.loadByCategory, articleController.index);
 
-// TODO: What does this do? Is it necessary?
-// Put your response in this comment...
+// DONE: What does this do? Is it necessary?
+// The following function invokes the function(s) above when the page is rendered. The page() function renders methods found in the articleController in order to load unique information according to the URL utilized in index.html
 page();

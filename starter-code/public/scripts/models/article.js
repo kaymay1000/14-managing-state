@@ -45,8 +45,8 @@
     )
   };
 
-  // TODO: We have a new method to query our DB for a specific record, based on varying criteria. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
-  // Put your response in this comment...
+  // DONE: We have a new method to query our DB for a specific record, based on varying criteria. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
+  // Article.findWhere is invoked in articleController.js as middleware in order to load articles base don author, id, and category of article. The field, value and callback function are passed in to locate the article information and call the function on itself.
   Article.findWhere = function(field, value, callback) {
     $.get('/articles/find', {field: field, val: value})
     .then(callback)
@@ -82,8 +82,8 @@
     })
   };
 
-  // TODO: Where is this invoked? Where does it interact elsewhere in the code? Where does the output of this code end up?
-  // Put your response in this comment...
+  // DONE: Where is this invoked? Where does it interact elsewhere in the code? Where does the output of this code end up?
+  // The output of Article.stats is rendered on admin.html under the "Blog Stats." This function interacts with adminView.js in order to create variables within the object based on external functions.
   Article.stats = () => {
     return {
       numArticles: Article.all.length,
