@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const conString = 'postgres://localhost:5432'; // TODO: Don't forget to set your own conString
+const conString = 'postgres://localhost:5432'; // DONE: Don't forget to set your own conString
 const client = new pg.Client(conString);
 client.connect(console.error);
 
@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 
-// TODO: Describe what our function for our middleware / proxy handling interacts with, both in what it does and where it is called
-// Put your response in this comment...
+// DONE: Describe what our function for our middleware / proxy handling interacts with, both in what it does and where it is called
+// The function proxyGithub is called in server.js when a URL beginning with /github/* is requested. This function protects a private GitHub token from being made available to a user, because the GITHUB_TOKEN variable lives in server.js, which is a file that is never deployed. The function itself authorizes use of the GITHUB_TOKEN to access contents of that token's associated repository.
 function proxyGitHub(request, response) {
   console.log('Routing GitHub request for', request.params[0]);
   (requestProxy({
@@ -30,8 +30,8 @@ function proxyGitHub(request, response) {
 app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
 app.get('/new', (request, response) => response.sendFile('new.html', {root: './public'}));
 app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
-// TODO: Where is this route called in the code? When invoked, what happens next?
-// Put your response in this comment...
+// DONE: Where is this route called in the code? When invoked, what happens next?
+// This route is called in repo.js in the function repos.requestRepos(). When invoked, this function calls its callback, proxyGithub, which authorizes use of an individual GITHUB_TOKEN.
 app.get('/github/*', proxyGitHub);
 
 
