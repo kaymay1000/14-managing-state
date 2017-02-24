@@ -1,5 +1,5 @@
-// TODO: Where is this invoked? Where does it interact elsewhere in the code?
-// Put your response in this comment...
+// DONE: Where is this invoked? Where does it interact elsewhere in the code?
+// This IFFE is invoked when the Admin Page view is rendered. It calls the Article.fetchall function created in article.js to load page content.
 
 (function() {
   const adminView = {
