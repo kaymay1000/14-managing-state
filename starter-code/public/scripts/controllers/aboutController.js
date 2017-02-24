@@ -8,8 +8,8 @@
     repos.requestRepos(repoView.index);
   };
 
-  // TODO: What value is in 'module'? What is the purpose of this line of code?
-  // Put your response in this comment...
+  // DONE: What value is in 'module'? What is the purpose of this line of code?
+  // "Module" is an arbitrary parameter within an IFFE used to create a global object from a local object, "aboutController."
   module.aboutController = aboutController;
-  
+
 })(window);
