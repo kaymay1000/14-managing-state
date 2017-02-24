@@ -34,10 +34,10 @@
     });
   };
 
-  // TODO: Combine both filter functions to a single event handler,
+  // DONE: Combine both filter functions to a single event handler,
   // which simply redirects to a url like: /category/skateboarding or /author/Kevin+Bacon
   // Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
-  // Put your response in this comment...
+  // This function is invoked in articleView.index (below), which is invoked in articleController.js. It has no parameters (no values are passed in), but it interacts with the values of the filters when they're changed.
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       let resource = this.id.replace('-filter', '');
