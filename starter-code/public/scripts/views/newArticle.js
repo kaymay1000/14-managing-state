@@ -10,8 +10,8 @@
     $('#new-form').on('change', newArticle.create);
   };
 
-// TODO: Where is this invoked? What values are passed in? Where does it interact elsewhere in the code?
-// Put your response in this comment...
+// DONE: Where is this invoked? What values are passed in? Where does it interact elsewhere in the code?
+// This function is invoked on the newArticle page, when a new article is being created by the user. The values the user inputs regarding author, title, category, content, published date, etc are used as inputs to append to the html. This code interacts with the html code and database as the article information is archived.
   newArticle.create = function() {
     $('#articles').empty();
     let formArticle = new Article({

@@ -116,8 +116,8 @@
     .then(callback);
   };
 
-  // TODO: Where does this code interact with other code in the blog application?
-  // Put your response in this comment...
+  // DONE: Where does this code interact with other code in the blog application?
+  // This code updates an existing record in the database, at a specific article ID. It can be accessed through the articles URL extension.
   Article.prototype.updateRecord = function(callback) {
     $.ajax({
       url: `/articles/${this.article_id}`,

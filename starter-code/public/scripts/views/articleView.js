@@ -67,8 +67,8 @@
     articleView.populateFilters();
     articleView.handleFilters();
 
-    // TODO: Replace setTeasers with just the truncation logic, if needed. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
-    // Put your response in this comment...
+    // DONE: Replace setTeasers with just the truncation logic, if needed. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
+    // This function is invoked when the article View of index.html is rendered. The length of the article is passed in as a condition of how much of the article to display.It interacts with html elements and article information retrieved from HackerIpsum.json.
     if ($('#articles article').length > 1) {
       $('.article-body *:nth-of-type(n+2)').hide();
     }
